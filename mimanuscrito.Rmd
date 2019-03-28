@@ -33,7 +33,8 @@ We found that happiness is positively related to sunshine hours (slope = `r roun
 
 ```{r}
 library(visreg)
-visreg(modelo, gg = TRUE)
+plot <- visreg(modelo, gg = TRUE)
+plot + ggtitle("Happiness and sunshine")
 ```
 
 ```{r}
