@@ -3,13 +3,11 @@ title: "Es bueno el solecito para la felicidad"
 author: "Francisco Rodríguez-Sánchez"
 date: "28 March 2019"
 output: word_document
-bibliography: references.bib
-csl: ecology-letters.csl
 ---
 
 ## INTRODUCTION
 
-It is well-known that climate influences people happiness [@Rezende_2007]....
+It is well-known that climate influences people happiness....
 
 ## METHODS
 
@@ -35,7 +33,7 @@ We found that happiness is positively related to sunshine hours (slope = `r roun
 
 ```{r}
 library(visreg)
-visreg(modelo)
+visreg(modelo, gg = TRUE)
 ```
 
 ```{r}
