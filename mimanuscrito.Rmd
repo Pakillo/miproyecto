@@ -1,0 +1,53 @@
+---
+title: "Es bueno el solecito para la felicidad"
+author: "Francisco Rodríguez-Sánchez"
+date: "28 March 2019"
+output: word_document
+bibliography: references.bib
+csl: ecology-letters.csl
+---
+
+## INTRODUCTION
+
+It is well-known that climate influences people happiness [@Rezende_2007]....
+
+## METHODS
+
+```{r}
+datos <- read.table("data.txt", header = TRUE)
+datos <- datos[-12, ]
+```
+
+```{r}
+modelo <- lm(happiness ~ sunshine, data = datos)
+```
+
+We query `r nrow(datos)` people and fitted a linear model:
+
+$$
+y = \alpha + \beta x + \epsilon 
+$$
+
+
+## RESULTS
+
+We found that happiness is positively related to sunshine hours (slope = `r round(coef(modelo)[2], digits = 2)`).
+
+```{r}
+library(visreg)
+visreg(modelo)
+```
+
+```{r}
+library(knitr)
+library(xtable)
+kable(xtable(modelo))
+```
+
+
+## DISCUSSION
+
+Sunshine is good for happiness .
+
+## REFERENCES
+
